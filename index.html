@@ -1,12 +1,29 @@
-<html>
-    <header>
-        <title>Event-Handling</title>
-        <link href="styles.css">
-    </header>
 
+
+
+<html>
+
+    <header id="page-header">
+        <title>Event-Handling</title>
+        <link rel="stylesheet" href="cards.css">
+    </header>
+      
     <body>
-        <script src="event-handling.js"></script>
+
+        <label id="instructions">Type your message in the text box below:</label>
+
+        <section id="inputTextArea">
+            <textarea type="text" id="message"></textarea>
+            <button id="submit-message">Add New Card</button>
+        </section>
+
+        <section>
+            <div id="output">
+            </div>
+        </section>
+
+        <script src="cards.js"></script>
+
     </body>
 
-    <footer></footer>
 </html>
