@@ -1,0 +1,41 @@
+
+/* Styling */
+body {
+    background-color: rgba(0, 0, 0, 0.66);
+}
+
+#inputTextArea {
+    border: 1px solid rgba(255, 255, 255, 0.56);
+    border-radius: 3px;
+    box-shadow: 0 10px 15px -6px black;    
+    padding: 1%;
+    max-width: 500px;
+    min-width: 170px;
+    margin-top: 20px;
+    background-color: rgba(211, 211, 211, 0.32);
+}
+
+.newCardBox {
+    border: 1px solid rgba(255, 255, 255, 0.56);
+    border-radius: 3px;
+    box-shadow: 0 10px 15px -6px black;    
+    padding: 1%;
+    max-width: 500px;
+    min-width: 170px;
+    margin-top: 20px;
+    background-color: rgba(211, 211, 211, 0.32);
+}
+
+.contentBox {
+    border: 1px solid grey;
+    padding: 1%;
+    background-color: white;
+}
+
+#inputTextArea #message {
+    width: 45%;
+}
+
+#instructions {
+    color: white;
+}
