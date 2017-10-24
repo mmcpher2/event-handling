@@ -11,6 +11,10 @@ let cardMessage = document.getElementsByClassName("message")
 // ID within create button element
 let createButton = document.getElementById("submit-message")
 
+// In order to know which delete button the user clicked on, each one must have a unique value 
+// in its id attribute.  Remember your factory and generator functions. Generator should yield 
+// a unique identifier. Factory should generate DOM string.
+
 // Create unique ID for each new card
 const idGenerator = function* () {
     let id = 1
@@ -19,7 +23,6 @@ const idGenerator = function* () {
 }
 // Instance of ID generator
 let uniqueID = idGenerator()
-
 
 // listenting for click on create button
 let createButtonClick = createButton.addEventListener("click", function (){
@@ -30,6 +33,8 @@ let createButtonClick = createButton.addEventListener("click", function (){
 
     // with html text and delete button
 
+        // Decided to use  'adjacenthtml' method because += was wiping the eventListeners off
+        // of the previous posts, so you couldn't delete them.
         document.getElementById("output").insertAdjacentHTML(`afterbegin`,`
         <section id="sect-${prefixIds}"class="newCardBox">
             <article class="contentBox"id="art-${prefixIds}">${newCard}</article>
@@ -37,7 +42,10 @@ let createButtonClick = createButton.addEventListener("click", function (){
         </section>`)
 
         let deleteBtn = document.getElementById(`butt-${prefixIds}`)
-    
+
+// When the user clicks the Delete button, the containing card, and no other cards, 
+// should then be removed from the DOM. Not just made invisible, actually removed from the DOM.
+
         deleteBtn.addEventListener("click", function () {
             console.log(prefixIds);
             let currentPost = document.getElementById(`sect-${prefixIds}`)
@@ -46,12 +54,4 @@ let createButtonClick = createButton.addEventListener("click", function (){
         })
 })
 
-// When the user clicks the Delete button, the containing card, and no other cards, 
-// should then be removed from the DOM. Not just made invisible, actually removed from the DOM.
 
-
-// In order to know which delete button the user clicked on, each one must have a unique value 
-// in its id attribute.  Remember your factory and generator functions. Generator should yield 
-// a unique identifier. Factory should generate DOM string.
-
-// You can't attach an event listener to an element until it has been added to the DOM.
